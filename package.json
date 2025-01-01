@@ -9,6 +9,7 @@
     "preview": "nuxt preview",
     "lint": "eslint --fix .",
     "format": "prettier --write .",
+    "preinstall": "npx only-allow pnpm",
     "postinstall": "nuxt prepare",
     "prepare": "husky"
   },
