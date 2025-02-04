@@ -16,10 +16,14 @@
   "dependencies": {
     "@nuxt/eslint": "0.7.4",
     "@nuxt/fonts": "0.10.3",
+    "@nuxt/icon": "1.10.3",
     "@nuxtjs/tailwindcss": "6.12.2",
+    "@vueuse/core": "^12.3.0",
     "chalk": "^5.4.1",
+    "class-variance-authority": "^0.7.1",
     "eslint": "^8.57.0 || ^9.0.0",
     "nuxt": "^3.15.0",
+    "tailwind-merge": "^2.6.0",
     "vue": "latest",
     "vue-router": "latest"
   },
@@ -27,6 +31,7 @@
   "devDependencies": {
     "eslint-config-prettier": "^9.1.0",
     "eslint-plugin-prettier": "^5.2.1",
+    "eslint-plugin-vue": "^9.32.0",
     "husky": "^9.1.7",
     "lint-staged": "^15.3.0",
     "prettier": "^3.4.2",

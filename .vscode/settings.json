@@ -12,5 +12,9 @@
 	},
 	"prettier.configPath": ".prettierrc",
 	"prettier.useEditorConfig": false,
-	"editor.tabSize": 2
+	"editor.tabSize": 2,
+	"tailwindCSS.experimental.classRegex": [
+		["cva\\(([^)]*)\\)", "[\"'`]([^\"'`]*).*?[\"'`]"],
+		["cx\\(([^)]*)\\)", "(?:'|\"|`)([^']*)(?:'|\"|`)"]
+	]
 }
