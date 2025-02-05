@@ -28,7 +28,7 @@ onUnmounted(() => {
 		:class="isScrolled ? 'bg-white shadow-md' : 'bg-BgPrimary'"
 	>
 		<div
-			class="container mx-auto grid grid-cols-2 items-center justify-between px-5 py-4 transition-[height] duration-500 md:grid-cols-3 md:py-6"
+			class="container mx-auto grid grid-cols-2 place-content-center items-center justify-between px-5 py-4 transition-[height] duration-500 md:grid-cols-3 md:py-6"
 			:class="isScrolled ? 'h-20' : ''"
 		>
 			<NuxtLink to="/">
