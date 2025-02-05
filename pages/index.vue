@@ -46,7 +46,7 @@ watch(topOne, () => {
 				Cutting-Edge Web Design, Development & SEO
 			</h4>
 			<h1
-				class="mx-auto my-7 max-w-[650px] text-center text-4xl font-semibold text-Primary md:text-5xl md:font-bold"
+				class="mx-auto max-w-[650px] py-7 text-center text-4xl font-semibold text-Primary md:text-5xl md:font-bold"
 			>
 				Creating Beautiful Websites That Drive Revenue
 			</h1>
