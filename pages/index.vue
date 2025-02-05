@@ -40,7 +40,10 @@ watch(topOne, () => {
 <template>
 	<GlobalsNavbar />
 	<main class="bg-BgPrimary">
-		<div class="container">
+		<div
+			class="container"
+			v-motion-fade-visible-once
+		>
 			<div class="py-16 md:py-20" />
 			<h4 class="text-center text-lg font-medium text-Secondary">
 				Cutting-Edge Web Design, Development & SEO
@@ -76,7 +79,10 @@ watch(topOne, () => {
 			/>
 		</div>
 	</section>
-	<section class="bg-BgPrimary py-16">
+	<section
+		class="bg-BgPrimary py-16"
+		v-motion-fade-visible-once
+	>
 		<div class="container relative">
 			<div class="fade-gradient absolute inset-0 z-50"></div>
 			<h4 class="mb-7 text-center text-lg font-medium text-Secondary">
@@ -104,7 +110,10 @@ watch(topOne, () => {
 			</div>
 		</div>
 	</section>
-	<section class="bg-BgPrimary py-16">
+	<section
+		class="bg-BgPrimary py-16"
+		v-motion-fade-visible-once
+	>
 		<div class="container">
 			<h4 class="text-center text-xl font-medium text-Secondary">
 				Our Services
@@ -204,7 +213,10 @@ watch(topOne, () => {
 					</div>
 				</div>
 				<!-- Website Screenshot -->
-				<div class="mt-6 rounded-3xl bg-white p-2 md:mt-0 md:w-1/2">
+				<div
+					v-motion-slide-visible-right
+					class="mt-6 rounded-3xl bg-white p-2 md:mt-0 md:w-1/2"
+				>
 					<img
 						src="https://azurodigital.com/wp-content/uploads/twisted-nail-testimonial-1024x911.jpg"
 						alt="Website Screenshot"
@@ -217,7 +229,10 @@ watch(topOne, () => {
 				class="mx-auto flex max-h-fit flex-col gap-8 rounded-xl px-6 py-8 md:max-w-[80vw] md:flex-row md:items-center"
 			>
 				<!-- Website Screenshot -->
-				<div class="mt-6 rounded-3xl bg-white p-2 md:mt-0 md:w-1/2">
+				<div
+					v-motion-slide-visible-left
+					class="mt-6 rounded-3xl bg-white p-2 md:mt-0 md:w-1/2"
+				>
 					<img
 						src="https://azurodigital.com/wp-content/uploads/twisted-nail-testimonial-1024x911.jpg"
 						alt="Website Screenshot"
@@ -301,7 +316,10 @@ watch(topOne, () => {
 					</div>
 				</div>
 				<!-- Website Screenshot -->
-				<div class="mt-6 rounded-3xl bg-white p-2 md:mt-0 md:w-1/2">
+				<div
+					v-motion-slide-visible-right
+					class="mt-6 rounded-3xl bg-white p-2 md:mt-0 md:w-1/2"
+				>
 					<img
 						src="https://azurodigital.com/wp-content/uploads/twisted-nail-testimonial-1024x911.jpg"
 						alt="Website Screenshot"
@@ -312,7 +330,10 @@ watch(topOne, () => {
 		</div>
 	</section>
 
-	<section class="bg-BgPrimary md:flex">
+	<section
+		class="bg-BgPrimary md:flex"
+		v-motion-fade-visible-once
+	>
 		<div
 			class="container mx-auto rounded-3xl bg-white px-4 py-8 text-center md:w-[80vw] md:px-10 md:py-14"
 		>
