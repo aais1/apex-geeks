@@ -163,7 +163,7 @@ watch(topOne, () => {
 		</div>
 	</section>
 
-	<section class="bg-BgPrimary py-16">
+	<section class="overflow-hidden bg-BgPrimary py-16">
 		<h4 class="text-center text-lg font-medium text-Secondary">Recent Work</h4>
 		<h1
 			class="mx-auto my-7 max-w-[400px] text-center text-[2.1rem] font-semibold text-Primary md:max-w-[500px] md:text-5xl md:font-bold"
@@ -215,13 +215,18 @@ watch(topOne, () => {
 				<!-- Website Screenshot -->
 				<div
 					v-motion-slide-visible-right
-					class="mt-6 rounded-3xl bg-white p-2 md:mt-0 md:w-1/2"
+					class="group relative mt-6 overflow-hidden rounded-3xl bg-white p-2 md:mt-0 md:w-1/2"
 				>
 					<img
 						src="https://azurodigital.com/wp-content/uploads/twisted-nail-testimonial-1024x911.jpg"
 						alt="Website Screenshot"
 						class="h-auto w-full cursor-pointer rounded-3xl"
 					/>
+
+					<!-- White Overlay Effect -->
+					<div
+						class="absolute inset-0 cursor-pointer bg-white opacity-0 transition-opacity duration-300 group-hover:opacity-25"
+					></div>
 				</div>
 			</div>
 
@@ -231,13 +236,18 @@ watch(topOne, () => {
 				<!-- Website Screenshot -->
 				<div
 					v-motion-slide-visible-left
-					class="mt-6 rounded-3xl bg-white p-2 md:mt-0 md:w-1/2"
+					class="group relative mt-6 overflow-hidden rounded-3xl bg-white p-2 md:mt-0 md:w-1/2"
 				>
 					<img
 						src="https://azurodigital.com/wp-content/uploads/twisted-nail-testimonial-1024x911.jpg"
 						alt="Website Screenshot"
 						class="h-auto w-full cursor-pointer rounded-3xl"
 					/>
+
+					<!-- White Overlay Effect -->
+					<div
+						class="absolute inset-0 cursor-pointer bg-white opacity-0 transition-opacity duration-300 group-hover:opacity-25"
+					></div>
 				</div>
 
 				<!-- Testimonial Content -->
@@ -318,13 +328,18 @@ watch(topOne, () => {
 				<!-- Website Screenshot -->
 				<div
 					v-motion-slide-visible-right
-					class="mt-6 rounded-3xl bg-white p-2 md:mt-0 md:w-1/2"
+					class="group relative mt-6 overflow-hidden rounded-3xl bg-white p-2 md:mt-0 md:w-1/2"
 				>
 					<img
 						src="https://azurodigital.com/wp-content/uploads/twisted-nail-testimonial-1024x911.jpg"
 						alt="Website Screenshot"
 						class="h-auto w-full cursor-pointer rounded-3xl"
 					/>
+
+					<!-- White Overlay Effect -->
+					<div
+						class="absolute inset-0 cursor-pointer bg-white opacity-0 transition-opacity duration-300 group-hover:opacity-25"
+					></div>
 				</div>
 			</div>
 		</div>
