@@ -1,38 +1,37 @@
 <script setup lang="ts">
 import { useElementBounding } from '@vueuse/core';
+import { ref, onMounted, watch } from 'vue';
 
-const imagesScrollOne = ref<HTMLDivElement>();
+const imagesScrollOne = ref<HTMLDivElement | null>(null);
+const imagesScrollTwo = ref<HTMLDivElement | null>(null);
+
 const { top: topOne, y: yOne } = useElementBounding(imagesScrollOne);
-const imagesScrollTwo = ref<HTMLDivElement>();
-const { top: topTwo, y: yTwo } = useElementBounding(imagesScrollOne);
+const { top: topTwo, y: yTwo } = useElementBounding(imagesScrollTwo);
 
 onMounted(() => {
-	const widthOne = imagesScrollOne.value!.scrollWidth;
-	const widthTwo = imagesScrollTwo.value!.scrollWidth;
-
-	imagesScrollOne.value!.scrollTo({
-		left: widthOne * 0.2
-	});
-
-	imagesScrollTwo.value!.scrollTo({
-		left: widthTwo * 0.2
-	});
+	if (imagesScrollOne.value && imagesScrollTwo.value) {
+		imagesScrollOne.value.scrollTo({
+			left: imagesScrollOne.value.scrollWidth * 0.2
+		});
+		imagesScrollTwo.value.scrollTo({
+			left: imagesScrollTwo.value.scrollWidth * 0.2
+		});
+	}
 });
 
-watch(topOne, () => {
-	if (topOne.value > 0) {
-		const percentageOne = topOne.value / imagesScrollOne.value!.offsetTop;
-		const amountToScrollOne =
-			imagesScrollOne.value!.scrollWidth * (percentageOne + 0.3) * 0.4;
+watch([topOne, topTwo], () => {
+	if (imagesScrollOne.value && imagesScrollTwo.value && topOne.value > 0) {
+		const percentageOne = topOne.value / imagesScrollOne.value.offsetTop;
+		imagesScrollOne.value.scrollTo({
+			left: imagesScrollOne.value.scrollWidth * (percentageOne + 0.3) * 0.4
+		});
 
-		imagesScrollOne.value!.scrollTo({ left: amountToScrollOne });
-
-		const percentageTwo = topTwo.value / imagesScrollTwo.value!.offsetTop;
-		const amountToScrollTwo =
-			imagesScrollTwo.value!.scrollWidth -
-			imagesScrollTwo.value!.scrollWidth * (percentageTwo + 0.3) * 0.8;
-
-		imagesScrollTwo.value!.scrollTo({ left: amountToScrollTwo });
+		const percentageTwo = topTwo.value / imagesScrollTwo.value.offsetTop;
+		imagesScrollTwo.value.scrollTo({
+			left:
+				imagesScrollTwo.value.scrollWidth -
+				imagesScrollTwo.value.scrollWidth * (percentageTwo + 0.3) * 0.8
+		});
 	}
 });
 </script>
@@ -57,25 +56,25 @@ watch(topOne, () => {
 	</main>
 	<section class="bg-BgPrimary">
 		<div
-			class="scrollbar-hidden flex flex-nowrap space-x-3 overflow-x-auto py-5 pt-10"
 			ref="imagesScrollOne"
+			class="scroll-container"
 		>
 			<UiImage
 				v-for="i in 10"
 				:key="i"
 				:image="`https://picsum.photos/${400 + i * 5}/300`"
-				class="inline-block max-h-[250px] min-w-[450px]"
+				class="image-item"
 			/>
 		</div>
 		<div
-			class="scrollbar-hidden flex flex-nowrap space-x-3 overflow-x-auto py-5 pt-10"
 			ref="imagesScrollTwo"
+			class="scroll-container"
 		>
 			<UiImage
 				v-for="i in 10"
 				:key="i"
 				:image="`https://picsum.photos/${400 + i * 5}/300`"
-				class="inline-block max-h-[250px] min-w-[450px]"
+				class="image-item"
 			/>
 		</div>
 	</section>
@@ -503,6 +502,21 @@ watch(topOne, () => {
 </template>
 
 <style scopped>
+.scroll-container {
+	@apply flex flex-nowrap space-x-3 overflow-hidden py-5 pt-10;
+	scrollbar-width: none;
+	-ms-overflow-style: none;
+	pointer-events: none;
+}
+
+.scroll-container::-webkit-scrollbar {
+	display: none;
+}
+
+.image-item {
+	@apply inline-block max-h-[250px] min-w-[450px];
+}
+
 .scrollbar-hidden {
 	scrollbar-width: 0;
 }

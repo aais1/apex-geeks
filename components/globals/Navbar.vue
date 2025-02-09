@@ -59,7 +59,7 @@ onUnmounted(() => {
 			</div>
 
 			<!-- Desktop Navigation -->
-			<ul class="hidden items-center gap-7 md:flex">
+			<ul class="hidden items-center justify-center gap-7 md:flex">
 				<li
 					class="cursor-pointer text-lg text-Primary transition-all hover:text-Secondary"
 				>
@@ -69,16 +69,6 @@ onUnmounted(() => {
 					class="cursor-pointer text-lg text-Primary transition-all hover:text-Secondary"
 				>
 					About
-				</li>
-				<li
-					class="cursor-pointer text-lg text-Primary transition-all hover:text-Secondary"
-				>
-					Careers
-				</li>
-				<li
-					class="cursor-pointer text-lg text-Primary transition-all hover:text-Secondary"
-				>
-					Blog
 				</li>
 				<li
 					class="cursor-pointer text-lg text-Primary transition-all hover:text-Secondary"
@@ -111,16 +101,6 @@ onUnmounted(() => {
 					class="cursor-pointer px-[30px] py-[15px] text-lg text-Primary transition-all hover:text-Secondary"
 				>
 					About
-				</li>
-				<li
-					class="cursor-pointer px-[30px] py-[15px] text-lg text-Primary transition-all hover:text-Secondary"
-				>
-					Careers
-				</li>
-				<li
-					class="cursor-pointer px-[30px] py-[15px] text-lg text-Primary transition-all hover:text-Secondary"
-				>
-					Blog
 				</li>
 				<li
 					class="cursor-pointer px-[30px] py-[15px] text-lg text-Primary transition-all hover:text-Secondary"
