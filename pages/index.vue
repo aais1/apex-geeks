@@ -162,7 +162,10 @@ watch([topOne, topTwo], () => {
 		</div>
 	</section>
 
-	<section class="overflow-hidden bg-BgPrimary py-16">
+	<section
+		id="recent-work"
+		class="overflow-hidden bg-BgPrimary py-16"
+	>
 		<h4 class="text-center text-lg font-medium text-Secondary">Recent Work</h4>
 		<h1
 			class="mx-auto my-7 max-w-[400px] text-center text-[2.1rem] font-semibold text-Primary md:max-w-[500px] md:text-5xl md:font-bold"

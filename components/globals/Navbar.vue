@@ -6,7 +6,7 @@ const isMenuOpen = ref(false);
 
 const handleScroll = () => {
 	const offset = window.scrollY;
-	isScrolled.value = offset > 200;
+	isScrolled.value = offset > 40;
 };
 
 const toggleMenu = () => {
@@ -63,17 +63,17 @@ onUnmounted(() => {
 				<li
 					class="cursor-pointer text-lg text-Primary transition-all hover:text-Secondary"
 				>
-					Work
+					<NuxtLink to="/#recent-work"> Work</NuxtLink>
 				</li>
 				<li
 					class="cursor-pointer text-lg text-Primary transition-all hover:text-Secondary"
 				>
-					About
+					<NuxtLink to="/about"> About</NuxtLink>
 				</li>
 				<li
 					class="cursor-pointer text-lg text-Primary transition-all hover:text-Secondary"
 				>
-					Contact
+					<NuxtLink to="/contact"> Contact</NuxtLink>
 				</li>
 			</ul>
 
@@ -95,17 +95,17 @@ onUnmounted(() => {
 				<li
 					class="cursor-pointer px-[30px] py-[15px] text-lg text-Primary transition-all hover:text-Secondary"
 				>
-					Work
+					<NuxtLink to="/#recent-work"> Work</NuxtLink>
 				</li>
 				<li
 					class="cursor-pointer px-[30px] py-[15px] text-lg text-Primary transition-all hover:text-Secondary"
 				>
-					About
+					<NuxtLink to="/about"> About</NuxtLink>
 				</li>
 				<li
 					class="cursor-pointer px-[30px] py-[15px] text-lg text-Primary transition-all hover:text-Secondary"
 				>
-					Contact
+					<NuxtLink to="/contact"> Contact</NuxtLink>
 				</li>
 				<GlobalsButton
 					intent="primary"
