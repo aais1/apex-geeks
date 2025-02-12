@@ -261,7 +261,7 @@
 						<p
 							class="text-md text-center font-normal text-gray-700 md:text-left"
 						>
-							Based in Faisalabad, Pakistan, Earth, MikyWay, Universe
+							Based in Faisalabad, Pakistan
 						</p>
 						<p
 							class="text-md text-center font-normal text-gray-700 md:text-left"
