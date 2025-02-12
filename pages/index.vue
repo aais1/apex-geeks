@@ -683,7 +683,7 @@ onMounted(() => {
 .image-item {
 	display: inline-block;
 	width: 350px;
-	height: 260px;
+
 	margin-right: 15px;
 	object-fit: cover;
 	transform: scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg)
