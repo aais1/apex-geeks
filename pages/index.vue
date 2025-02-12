@@ -1,38 +1,26 @@
 <script setup lang="ts">
-import { useElementBounding } from '@vueuse/core';
-import { ref, onMounted, watch } from 'vue';
+import { ref, onMounted } from 'vue';
 
 const imagesScrollOne = ref<HTMLDivElement | null>(null);
 const imagesScrollTwo = ref<HTMLDivElement | null>(null);
 
-const { top: topOne, y: yOne } = useElementBounding(imagesScrollOne);
-const { top: topTwo, y: yTwo } = useElementBounding(imagesScrollTwo);
+let scrollPosition = 0;
+const speedOne = 0.4; // Speed for the first slider (moving left)
+const speedTwo = 0.6; // Speed for the second slider (moving right)
+
+const handleScroll = () => {
+	scrollPosition = window.scrollY;
+
+	if (imagesScrollOne.value && imagesScrollTwo.value) {
+		// Apply horizontal parallax movement
+		imagesScrollOne.value.style.transform = `translateX(-${scrollPosition * speedOne}px)`; // Scroll left
+		imagesScrollTwo.value.style.transform = `translateX(${scrollPosition * speedTwo}px)`; // Scroll right
+	}
+};
 
 onMounted(() => {
-	if (imagesScrollOne.value && imagesScrollTwo.value) {
-		imagesScrollOne.value.scrollTo({
-			left: imagesScrollOne.value.scrollWidth * 0.2
-		});
-		imagesScrollTwo.value.scrollTo({
-			left: imagesScrollTwo.value.scrollWidth * 0.2
-		});
-	}
-});
-
-watch([topOne, topTwo], () => {
-	if (imagesScrollOne.value && imagesScrollTwo.value && topOne.value > 0) {
-		const percentageOne = topOne.value / imagesScrollOne.value.offsetTop;
-		imagesScrollOne.value.scrollTo({
-			left: imagesScrollOne.value.scrollWidth * (percentageOne + 0.3) * 0.4
-		});
-
-		const percentageTwo = topTwo.value / imagesScrollTwo.value.offsetTop;
-		imagesScrollTwo.value.scrollTo({
-			left:
-				imagesScrollTwo.value.scrollWidth -
-				imagesScrollTwo.value.scrollWidth * (percentageTwo + 0.3) * 0.8
-		});
-	}
+	window.addEventListener('scroll', handleScroll);
+	handleScroll(); // Initialize the scroll effect
 });
 </script>
 
@@ -54,7 +42,11 @@ watch([topOne, topTwo], () => {
 			</h1>
 		</div>
 	</main>
-	<section class="bg-BgPrimary">
+
+	<section
+		class="bg-BgPrimary"
+		style="overflow: hidden"
+	>
 		<div
 			ref="imagesScrollOne"
 			class="scroll-container"
@@ -69,6 +61,7 @@ watch([topOne, topTwo], () => {
 		<div
 			ref="imagesScrollTwo"
 			class="scroll-container"
+			style="margin-left: -400px"
 		>
 			<UiImage
 				v-for="i in 10"
@@ -78,6 +71,7 @@ watch([topOne, topTwo], () => {
 			/>
 		</div>
 	</section>
+
 	<section
 		class="bg-BgPrimary py-16"
 		v-motion-fade-visible-once
@@ -109,6 +103,7 @@ watch([topOne, topTwo], () => {
 			</div>
 		</div>
 	</section>
+
 	<section
 		class="bg-BgPrimary py-16"
 		v-motion-fade-visible-once
@@ -125,8 +120,8 @@ watch([topOne, topTwo], () => {
 			<div
 				class="mt-16 grid gap-[3px] overflow-hidden rounded-[2rem] border-[3px] border-gray-100 bg-gray-100 sm:grid-cols-2 lg:grid-cols-3"
 			>
+				<!-- Custom Website Design -->
 				<div
-					v-for="i in 6"
 					class="group flex flex-col bg-white px-10 py-10 transition hover:bg-BgPrimary"
 				>
 					<div
@@ -145,6 +140,173 @@ watch([topOne, topTwo], () => {
 						From industry research to A/B testing, we will design a unique
 						website that will WOW your visitors and motivate them to take
 						action.
+					</p>
+					<NuxtLink
+						to="/"
+						class="mt-5 flex items-center text-lg text-Secondary"
+					>
+						Learn More
+						<Icon
+							name="material-symbols:arrow-right-alt"
+							size="24"
+							class="mx-1 mt-1"
+						/>
+					</NuxtLink>
+				</div>
+
+				<!-- WordPress Development -->
+				<div
+					class="group flex flex-col bg-white px-10 py-10 transition hover:bg-BgPrimary"
+				>
+					<div
+						class="grid size-16 place-content-center rounded-full bg-BgPrimary transition group-hover:bg-white"
+					>
+						<LogosComputerPaint class="size-8 text-Secondary" />
+					</div>
+					<NuxtLink>
+						<h1
+							class="my-5 cursor-pointer text-2xl font-semibold text-Primary transition hover:text-Secondary"
+						>
+							WordPress Development
+						</h1>
+					</NuxtLink>
+					<p class="text-lg text-Neutral">
+						We develop websites at the highest standard of security,
+						responsiveness, accessibility, reliability, loading speed, and
+						ease-of-use.
+					</p>
+					<NuxtLink
+						to="/"
+						class="mt-5 flex items-center text-lg text-Secondary"
+					>
+						Learn More
+						<Icon
+							name="material-symbols:arrow-right-alt"
+							size="24"
+							class="mx-1 mt-1"
+						/>
+					</NuxtLink>
+				</div>
+
+				<!-- Search Engine Optimization -->
+				<div
+					class="group flex flex-col bg-white px-10 py-10 transition hover:bg-BgPrimary"
+				>
+					<div
+						class="grid size-16 place-content-center rounded-full bg-BgPrimary transition group-hover:bg-white"
+					>
+						<LogosComputerPaint class="size-8 text-Secondary" />
+					</div>
+					<NuxtLink>
+						<h1
+							class="my-5 cursor-pointer text-2xl font-semibold text-Primary transition hover:text-Secondary"
+						>
+							Search Engine Optimization
+						</h1>
+					</NuxtLink>
+					<p class="text-lg text-Neutral">
+						Dominate Google and maximize organic traffic with an SEO-focused
+						website. We skyrocket our clients' rankings and accelerate growth.
+					</p>
+					<NuxtLink
+						to="/"
+						class="mt-5 flex items-center text-lg text-Secondary"
+					>
+						Learn More
+						<Icon
+							name="material-symbols:arrow-right-alt"
+							size="24"
+							class="mx-1 mt-1"
+						/>
+					</NuxtLink>
+				</div>
+
+				<!-- Web Hosting & Maintenance (Replaced Logo Design & Branding) -->
+				<div
+					class="group flex flex-col bg-white px-10 py-10 transition hover:bg-BgPrimary"
+				>
+					<div
+						class="grid size-16 place-content-center rounded-full bg-BgPrimary transition group-hover:bg-white"
+					>
+						<LogosComputerPaint class="size-8 text-Secondary" />
+					</div>
+					<NuxtLink>
+						<h1
+							class="my-5 cursor-pointer text-2xl font-semibold text-Primary transition hover:text-Secondary"
+						>
+							Web Hosting & Maintenance
+						</h1>
+					</NuxtLink>
+					<p class="text-lg text-Neutral">
+						Avoid technical headaches and gain peace of mind. We ensure that our
+						clients' websites are always performing at the highest level.
+					</p>
+					<NuxtLink
+						to="/"
+						class="mt-5 flex items-center text-lg text-Secondary"
+					>
+						Learn More
+						<Icon
+							name="material-symbols:arrow-right-alt"
+							size="24"
+							class="mx-1 mt-1"
+						/>
+					</NuxtLink>
+				</div>
+
+				<!-- Content Writing Assistance -->
+				<div
+					class="group flex flex-col bg-white px-10 py-10 transition hover:bg-BgPrimary"
+				>
+					<div
+						class="grid size-16 place-content-center rounded-full bg-BgPrimary transition group-hover:bg-white"
+					>
+						<LogosComputerPaint class="size-8 text-Secondary" />
+					</div>
+					<NuxtLink>
+						<h1
+							class="my-5 cursor-pointer text-2xl font-semibold text-Primary transition hover:text-Secondary"
+						>
+							Content Writing Assistance
+						</h1>
+					</NuxtLink>
+					<p class="text-lg text-Neutral">
+						We write content that engages the reader, drives conversions,
+						improves SEO, and allows the design to look aesthetically pleasing.
+					</p>
+					<NuxtLink
+						to="/"
+						class="mt-5 flex items-center text-lg text-Secondary"
+					>
+						Learn More
+						<Icon
+							name="material-symbols:arrow-right-alt"
+							size="24"
+							class="mx-1 mt-1"
+						/>
+					</NuxtLink>
+				</div>
+
+				<!-- Mobile Application Development (Last Item) -->
+				<div
+					class="group flex flex-col bg-white px-10 py-10 transition hover:bg-BgPrimary"
+				>
+					<div
+						class="grid size-16 place-content-center rounded-full bg-BgPrimary transition group-hover:bg-white"
+					>
+						<LogosComputerPaint class="size-8 text-Secondary" />
+					</div>
+					<NuxtLink>
+						<h1
+							class="my-5 cursor-pointer text-2xl font-semibold text-Primary transition hover:text-Secondary"
+						>
+							Mobile Application Development
+						</h1>
+					</NuxtLink>
+					<p class="text-lg text-Neutral">
+						We specialize in creating mobile applications with a focus on user
+						experience, functionality, and performance. Let’s build an app that
+						will elevate your business.
 					</p>
 					<NuxtLink
 						to="/"
@@ -506,18 +668,30 @@ watch([topOne, topTwo], () => {
 
 <style scopped>
 .scroll-container {
-	@apply flex flex-nowrap space-x-3 overflow-hidden py-5 pt-10;
-	scrollbar-width: none;
-	-ms-overflow-style: none;
-	pointer-events: none;
+	display: flex;
+	overflow: hidden;
+	white-space: nowrap;
+	width: 500vw;
+	margin: 10px;
+	position: relative;
+	transition: transform 0.1s ease-out;
+	will-change: transform; /* Optimizing transform for better performance */
+	transform-style: preserve-3d; /* Ensuring 3D transforms are preserved */
+	backface-visibility: hidden; /* Hides back faces during 3D transforms */
+}
+
+.image-item {
+	display: inline-block;
+	width: 350px;
+	height: 260px;
+	margin-right: 15px;
+	object-fit: cover;
+	transform: scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg)
+		skew(0deg);
 }
 
 .scroll-container::-webkit-scrollbar {
 	display: none;
-}
-
-.image-item {
-	@apply inline-block max-h-[250px] min-w-[450px];
 }
 
 .scrollbar-hidden {
