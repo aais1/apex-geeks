@@ -1,7 +1,7 @@
 <template>
 	<GlobalsNavbar />
 	<div class="bg-BgPrimary pt-10 md:pt-20">
-		<div class="mx-auto w-[90vw] px-6 py-12 md:w-[80vw]">
+		<div class="mx-auto px-6 py-12 md:w-[80vw]">
 			<div class="grid grid-cols-1 gap-12 md:grid-cols-2">
 				<div v-motion-slide-visible-once-left>
 					<h1
