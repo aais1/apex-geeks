@@ -1,19 +1,22 @@
 <template>
 	<GlobalsNavbar />
-	<div class="bg-gray-50 pt-10 md:pt-24">
+	<div class="bg-BgPrimary pt-10 md:pt-20">
 		<div class="mx-auto w-[90vw] px-6 py-12 md:w-[80vw]">
 			<div class="grid grid-cols-1 gap-12 md:grid-cols-2">
-				<div>
+				<div v-motion-slide-visible-once-left>
 					<h1 class="mb-4 w-1/2 text-[3.9rem] font-bold text-[#0E1435]">
 						Start the Conversation
 					</h1>
-					<p class="mb-6 w-[80%] text-[1.1rem] text-gray-600">
+					<p class="mb-6 text-[1.1rem] text-gray-600 md:w-[80%]">
 						Let’s establish the basic details of your project in two simple
 						steps. We’ll be in touch to book a discovery call shortly after you
 						submit the form.
 					</p>
 				</div>
-				<div class="rounded-lg bg-white p-8 shadow-lg">
+				<div
+					v-motion-fade-visible-once
+					class="rounded-lg bg-white p-8 shadow-lg"
+				>
 					<h2 class="mb-4 text-[2rem] font-bold text-gray-900">
 						Let's Get to Know You
 					</h2>
@@ -100,9 +103,14 @@
 						</label>
 						<button
 							type="submit"
-							class="w-full rounded-lg bg-blue-600 p-3 text-white hover:bg-blue-700"
+							:disabled="loading"
+							class="flex w-full items-center justify-center rounded-lg bg-blue-600 p-3 text-white opacity-90 hover:bg-blue-700 disabled:opacity-50"
 						>
-							Submit
+							<span
+								v-if="loading"
+								class="mr-2 h-5 w-5 animate-spin rounded-full border-2 border-white border-t-transparent"
+							></span>
+							{{ loading ? 'Sending...' : 'Submit' }}
 						</button>
 					</form>
 					<p
@@ -135,36 +143,29 @@ export default {
 				projectSummary: ''
 			},
 			message: '',
-			file: null
+			file: null,
+			loading: false
 		};
 	},
 	methods: {
-		// Capture file input
-		handleFileUpload(event) {
-			this.file = event.target.files[0];
-		},
-		// Submit form data along with file
 		async submitProposal() {
+			this.loading = true;
 			try {
 				const formData = new FormData();
-				formData.append('firstName', this.form.firstName);
-				formData.append('lastName', this.form.lastName);
-				formData.append('email', this.form.email);
-				formData.append('phone', this.form.phone);
-				formData.append('company', this.form.company);
-				formData.append('website', this.form.website);
-				formData.append('projectSummary', this.form.projectSummary);
-
+				Object.keys(this.form).forEach((key) => {
+					formData.append(key, this.form[key]);
+				});
 				if (this.file) {
 					formData.append('file', this.file);
 				}
-
 				const response = await axios.post('/api/sendProposal', formData, {
 					headers: { 'Content-Type': 'multipart/form-data' }
 				});
 				this.message = response.data.message;
 			} catch (error) {
 				this.message = 'Failed to send proposal';
+			} finally {
+				this.loading = false;
 			}
 		}
 	}

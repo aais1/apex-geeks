@@ -107,7 +107,7 @@ onUnmounted(() => {
 				<li
 					class="cursor-pointer px-[30px] py-[15px] text-lg text-Primary transition-all hover:text-Secondary"
 				>
-					<NuxtLink to="/contact"> Contact</NuxtLink>
+					<NuxtLink to="/proposal"> Contact</NuxtLink>
 				</li>
 				<NuxtLink to="/proposal">
 					<GlobalsButton
