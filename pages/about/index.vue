@@ -22,12 +22,12 @@
 					We’re a premium, boutique web design agency working remotely
 					throughout North America and serving clients across the globe.
 				</p>
-				<a
-					href="#"
+				<NuxtLink
+					to="/proposal"
 					class="mb-4 inline-block rounded-3xl bg-[#0E75E3] px-6 py-3 text-white shadow-lg"
 				>
 					Get a Proposal →
-				</a>
+				</NuxtLink>
 				<!-- <div class="flex items-center justify-center space-x-2 text-Primary">
 				<span class="font-semibold">RATED 4.9/5</span>
 				<span class="text-red-500">★★★★★</span>
@@ -218,13 +218,15 @@
 					Let’s find out if we’re the right fit for each other.
 				</p>
 				<!-- Button -->
-				<GlobalsButton
-					intent="primary"
-					animation
-					class="ml-auto w-52 px-3 py-2 font-medium"
-				>
-					Get A Proposal
-				</GlobalsButton>
+				<NuxtLink to="/proposal">
+					<GlobalsButton
+						intent="primary"
+						animation
+						class="ml-auto w-52 px-3 py-2 font-medium"
+					>
+						Get A Proposal
+					</GlobalsButton>
+				</NuxtLink>
 
 				<!-- Footer Links -->
 				<div class="mt-8 text-center text-sm text-gray-500 md:mt-16">
