@@ -109,7 +109,10 @@ onUnmounted(() => {
 				>
 					<NuxtLink to="/proposal"> Contact</NuxtLink>
 				</li>
-				<NuxtLink to="/proposal">
+				<NuxtLink
+					to="/proposal"
+					class="w-full"
+				>
 					<GlobalsButton
 						intent="primary"
 						animation

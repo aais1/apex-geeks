@@ -4,7 +4,9 @@
 		<div class="mx-auto w-[90vw] px-6 py-12 md:w-[80vw]">
 			<div class="grid grid-cols-1 gap-12 md:grid-cols-2">
 				<div v-motion-slide-visible-once-left>
-					<h1 class="mb-4 w-1/2 text-[3.9rem] font-bold text-[#0E1435]">
+					<h1
+						class="mb-4 w-1/2 text-[2.8rem] font-bold text-[#0E1435] md:text-[3.9rem]"
+					>
 						Start the Conversation
 					</h1>
 					<p class="mb-6 text-[1.1rem] text-gray-600 md:w-[80%]">
