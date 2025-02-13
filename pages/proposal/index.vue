@@ -5,7 +5,7 @@
 			<div class="grid grid-cols-1 gap-12 md:grid-cols-2">
 				<div v-motion-slide-visible-once-left>
 					<h1
-						class="mb-4 w-1/2 text-[2.8rem] font-bold text-[#0E1435] md:text-[3.9rem]"
+						class="mb-4 text-[2.8rem] font-bold text-[#0E1435] md:w-1/2 md:text-[3.9rem]"
 					>
 						Start the Conversation
 					</h1>
