@@ -77,7 +77,7 @@ onUnmounted(() => {
 				</li>
 			</ul>
 
-			<NuxtLink to="/proposal">
+			<NuxtLink to="/contact">
 				<GlobalsButton
 					intent="primary"
 					animation
@@ -109,7 +109,7 @@ onUnmounted(() => {
 				>
 					<NuxtLink to="/contact"> Contact</NuxtLink>
 				</li>
-				<NuxtLink to="/proposal">
+				<NuxtLink to="/contact">
 					<GlobalsButton
 						intent="primary"
 						animation

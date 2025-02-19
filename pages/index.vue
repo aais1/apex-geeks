@@ -527,7 +527,7 @@ onMounted(() => {
 				Let’s find out if we’re the right fit for each other.
 			</p>
 			<!-- Button -->
-			<NuxtLink to="/proposal">
+			<NuxtLink to="/contact">
 				<GlobalsButton
 					intent="primary"
 					animation

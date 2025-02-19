@@ -1,49 +1,131 @@
 <template>
 	<GlobalsNavbar />
 	<section className="bg-BgPrimary py-2 md:py-12">
-		<div class="mx-auto flex w-[90vw] flex-row pt-[150px] md:w-[80vw]">
-			<div>
-				<p class="text-[1rem] font-[500] text-[#0E75E3]">Contact Us</p>
-				<h1
-					className="text-[2rem] font-bold max-w-[500px] text-[#0E1435] md:text-[2.8rem]"
-				>
-					Let's Connect You With The Right Person
-				</h1>
-				<p className="text-[1rem] text-[#474B64] md:w-[50%]">
-					Select one of the contact options below to connect with us. We’re
-					ready to help with any questions or requests you may have.
-				</p>
-			</div>
-			<div></div>
-		</div>
-	</section>
-
-	<section class="bg-BgPrimary px-4 py-16">
-		<div
-			class="grid grid-cols-1 gap-3 md:mx-auto md:w-[80vw] md:grid-cols-2 md:gap-6 lg:grid-cols-4"
-		>
-			<div
-				v-for="(card, index) in cards"
-				:key="index"
-				class="md:items-between w-[100%] transform cursor-pointer justify-between rounded-xl border-2 border-[#474B641C] bg-white p-5 shadow-md transition-transform hover:-translate-y-[2px] hover:bg-BgPrimary md:flex md:h-[220px] md:w-full md:flex-col"
-			>
-				<div class="mb-4 flex justify-start">
-					<div
-						class="flex h-14 w-14 items-center justify-center rounded-full bg-blue-100"
-					>
-						<component
-							:is="card.icon"
-							class="h-6 w-6 text-blue-500"
-						/>
+		<div class="mx-auto flex w-[90vw] flex-row md:w-[80vw]">
+			<div class="bg-BgPrimary pt-10 md:pt-20">
+				<div class="mx-auto px-6 py-12 md:w-[80vw]">
+					<div class="grid grid-cols-1 gap-12 md:grid-cols-2">
+						<div v-motion-slide-visible-once-left>
+							<h1
+								class="mb-4 text-[2.8rem] font-bold text-[#0E1435] md:w-1/2 md:text-[3.9rem]"
+							>
+								Start the Conversation
+							</h1>
+							<p class="mb-6 text-[1.1rem] text-gray-600 md:w-[80%]">
+								Let’s establish the basic details of your project in two simple
+								steps. We’ll be in touch to book a discovery call shortly after
+								you submit the form.
+							</p>
+						</div>
+						<div
+							v-motion-fade-visible-once
+							class="rounded-lg bg-white p-8 shadow-lg"
+						>
+							<h2 class="mb-4 text-[2rem] font-bold text-gray-900">
+								Let's Get to Know You
+							</h2>
+							<form
+								@submit.prevent="submitProposal"
+								class="space-y-4"
+								enctype="multipart/form-data"
+							>
+								<div class="grid grid-cols-1 gap-4 md:grid-cols-2">
+									<label class="block text-gray-700"
+										>First Name
+										<input
+											type="text"
+											v-model="form.firstName"
+											required
+											class="w-full rounded-lg border border-gray-300 p-3 focus:ring focus:ring-blue-300"
+										/>
+									</label>
+									<label class="block text-gray-700"
+										>Last Name
+										<input
+											type="text"
+											v-model="form.lastName"
+											required
+											class="w-full rounded-lg border border-gray-300 p-3 focus:ring focus:ring-blue-300"
+										/>
+									</label>
+								</div>
+								<div class="grid grid-cols-1 gap-4 md:grid-cols-2">
+									<label class="block text-gray-700"
+										>Email Address
+										<input
+											type="email"
+											v-model="form.email"
+											required
+											class="w-full rounded-lg border border-gray-300 p-3 focus:ring focus:ring-blue-300"
+										/>
+									</label>
+									<label class="block text-gray-700"
+										>Phone Number
+										<input
+											type="tel"
+											v-model="form.phone"
+											required
+											class="w-full rounded-lg border border-gray-300 p-3 focus:ring focus:ring-blue-300"
+										/>
+									</label>
+								</div>
+								<div class="grid grid-cols-1 gap-4 md:grid-cols-2">
+									<label class="block text-gray-700"
+										>Company Name
+										<input
+											type="text"
+											v-model="form.company"
+											required
+											class="w-full rounded-lg border border-gray-300 p-3 focus:ring focus:ring-blue-300"
+										/>
+									</label>
+									<label class="block text-gray-700"
+										>Website URL
+										<input
+											type="url"
+											v-model="form.website"
+											required
+											class="w-full rounded-lg border border-gray-300 p-3 focus:ring focus:ring-blue-300"
+										/>
+									</label>
+								</div>
+								<label class="block text-gray-700"
+									>Upload Project Files (Optional)
+									<input
+										type="file"
+										@change="handleFileUpload"
+										class="w-full rounded-lg border border-gray-300 p-3 focus:ring focus:ring-blue-300"
+									/>
+								</label>
+								<label class="block text-gray-700"
+									>Project Summary
+									<textarea
+										v-model="form.projectSummary"
+										required
+										class="w-full rounded-lg border border-gray-300 p-3 focus:ring focus:ring-blue-300"
+									></textarea>
+								</label>
+								<button
+									type="submit"
+									:disabled="loading"
+									class="flex w-full items-center justify-center rounded-lg bg-blue-600 p-3 text-white opacity-90 hover:bg-blue-700 disabled:opacity-50"
+								>
+									<span
+										v-if="loading"
+										class="mr-2 h-5 w-5 animate-spin rounded-full border-2 border-white border-t-transparent"
+									></span>
+									{{ loading ? 'Sending...' : 'Submit' }}
+								</button>
+							</form>
+							<p
+								v-if="message"
+								class="mt-4 text-center text-green-600"
+							>
+								{{ message }}
+							</p>
+						</div>
 					</div>
 				</div>
-				<h3 class="text-lg font-semibold text-gray-900">
-					{{ card.title }}
-					<span
-						class="inline-block translate-x-1 transform transition-transform"
-						>→</span
-					>
-				</h3>
 			</div>
 		</div>
 	</section>
@@ -54,7 +136,7 @@
 				FAQs
 			</h3>
 			<h2
-				class="mx-auto my-4 mb-4 text-center text-[2.5rem] font-bold text-[#0E1435] md:max-w-[500px] md:text-[3.8rem]"
+				class="mx-auto my-4 mb-4 text-center text-[2rem] font-bold text-[#0E1435] md:max-w-[500px] md:text-[3.8rem]"
 			>
 				Your Questions, Answered
 			</h2>
@@ -130,7 +212,7 @@
 				Let’s find out if we’re the right fit for each other.
 			</p>
 			<!-- Button -->
-			<NuxtLink to="/proposal">
+			<NuxtLink to="/contact">
 				<GlobalsButton
 					intent="primary"
 					animation
@@ -267,97 +349,52 @@
 
 <script setup>
 import { ref } from 'vue';
+import axios from 'axios';
+import Navbar from '@/components/Navbar.vue';
 
+// Define component properties
+const form = ref({
+	firstName: '',
+	lastName: '',
+	email: '',
+	phone: '',
+	company: '',
+	website: '',
+	projectSummary: ''
+});
+const message = ref('');
+const file = ref(null);
+const loading = ref(false);
+
+// Define the method to submit the proposal
+const submitProposal = async () => {
+	loading.value = true;
+	try {
+		const formData = new FormData();
+		Object.keys(form.value).forEach((key) => {
+			formData.append(key, form.value[key]);
+		});
+		if (file.value) {
+			formData.append('file', file.value);
+		}
+		const response = await axios.post('/api/sendProposal', formData, {
+			headers: { 'Content-Type': 'multipart/form-data' }
+		});
+		message.value = response.data.message;
+	} catch (error) {
+		message.value = 'Failed to send proposal';
+	} finally {
+		loading.value = false;
+	}
+};
+
+// FAQ toggle functionality
 const activeIndex = ref(null);
-
 const toggleFaq = (index) => {
 	activeIndex.value = activeIndex.value === index ? null : index;
 };
 
-import { h } from 'vue';
-
-// Define card data with dynamic SVG icons
-const cards = [
-	{
-		title: 'Request a proposal for your project',
-		icon: h(
-			'svg',
-			{
-				xmlns: 'http://www.w3.org/2000/svg',
-				viewBox: '0 0 24 24',
-				fill: 'none',
-				stroke: 'currentColor',
-				strokeWidth: '2',
-				strokeLinecap: 'round',
-				strokeLinejoin: 'round',
-				class: 'w-6 h-6'
-			},
-			[h('path', { d: 'M8 7v10M12 7v10M16 7v10' })]
-		)
-	},
-	{
-		title: 'Apply for a job and join our team',
-		icon: h(
-			'svg',
-			{
-				xmlns: 'http://www.w3.org/2000/svg',
-				viewBox: '0 0 24 24',
-				fill: 'none',
-				stroke: 'currentColor',
-				strokeWidth: '2',
-				strokeLinecap: 'round',
-				strokeLinejoin: 'round',
-				class: 'w-6 h-6'
-			},
-			[
-				h('path', {
-					d: 'M12 2v4M15 6h3a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h3M16 16h-8'
-				})
-			]
-		)
-	},
-	{
-		title: 'Pitch your product or service to us',
-		icon: h(
-			'svg',
-			{
-				xmlns: 'http://www.w3.org/2000/svg',
-				viewBox: '0 0 24 24',
-				fill: 'none',
-				stroke: 'currentColor',
-				strokeWidth: '2',
-				strokeLinecap: 'round',
-				strokeLinejoin: 'round',
-				class: 'w-6 h-6'
-			},
-			[
-				h('circle', { cx: '12', cy: '12', r: '10' }),
-				h('path', { d: 'M12 16h.01M8 12h8M8 8h8' })
-			]
-		)
-	},
-	{
-		title: "I'm an existing or past client",
-		icon: h(
-			'svg',
-			{
-				xmlns: 'http://www.w3.org/2000/svg',
-				viewBox: '0 0 24 24',
-				fill: 'none',
-				stroke: 'currentColor',
-				strokeWidth: '2',
-				strokeLinecap: 'round',
-				strokeLinejoin: 'round',
-				class: 'w-6 h-6'
-			},
-			[
-				h('circle', { cx: '12', cy: '12', r: '10' }),
-				h('path', { d: 'M16 14c0 1.33-2.67 2-4 2s-4-.67-4-2' })
-			]
-		)
-	}
-];
-
+// FAQ data
 const faqs = ref([
 	{
 		question: 'What are the next steps to get things started?',

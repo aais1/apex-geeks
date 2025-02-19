@@ -23,7 +23,7 @@
 					throughout North America and serving clients across the globe.
 				</p>
 				<NuxtLink
-					to="/proposal"
+					to="/contact"
 					class="mb-4 inline-block rounded-3xl bg-[#0E75E3] px-6 py-3 text-white shadow-lg"
 				>
 					Get a Proposal →
@@ -218,7 +218,7 @@
 					Let’s find out if we’re the right fit for each other.
 				</p>
 				<!-- Button -->
-				<NuxtLink to="/proposal">
+				<NuxtLink to="/contact">
 					<GlobalsButton
 						intent="primary"
 						animation
