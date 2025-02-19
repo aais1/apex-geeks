@@ -1,8 +1,8 @@
 <template>
 	<GlobalsNavbar />
-	<section className="bg-BgPrimary py-2 md:py-12 w-full">
-		<div class="mx-auto flex w-[90vw] flex-row md:w-[80vw]">
-			<div class="w-full bg-BgPrimary pt-10 md:pt-20">
+	<section class="bg-BgPrimary">
+		<div class="mx-auto flex w-[90vw] flex-row md:w-[80vw] md:py-12">
+			<div class="w-screen bg-BgPrimary pt-10 md:pt-20">
 				<div class="mx-auto px-2 py-12 md:w-[80vw] md:px-6">
 					<div class="grid grid-cols-1 gap-12 md:grid-cols-2">
 						<div v-motion-slide-visible-once-left>
