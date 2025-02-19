@@ -2,8 +2,8 @@
 	<GlobalsNavbar />
 	<section className="bg-BgPrimary py-2 md:py-12 w-full">
 		<div class="mx-auto flex w-[90vw] flex-row md:w-[80vw]">
-			<div class="bg-BgPrimary pt-10 md:pt-20">
-				<div class="mx-auto px-6 py-12 md:w-[80vw]">
+			<div class="w-full bg-BgPrimary pt-10 md:pt-20">
+				<div class="mx-auto px-2 py-12 md:w-[80vw] md:px-6">
 					<div class="grid grid-cols-1 gap-12 md:grid-cols-2">
 						<div v-motion-slide-visible-once-left>
 							<h1
@@ -19,7 +19,7 @@
 						</div>
 						<div
 							v-motion-fade-visible-once
-							class="rounded-lg bg-white p-8 shadow-lg"
+							class="rounded-lg bg-white p-4 shadow-lg md:p-8"
 						>
 							<h2 class="mb-4 text-[2rem] font-bold text-gray-900">
 								Let's Get to Know You
