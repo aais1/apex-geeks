@@ -1,6 +1,6 @@
 <template>
 	<GlobalsNavbar />
-	<section className="bg-BgPrimary py-2 md:py-12">
+	<section className="bg-BgPrimary py-2 md:py-12 w-full">
 		<div class="mx-auto flex w-[90vw] flex-row md:w-[80vw]">
 			<div class="bg-BgPrimary pt-10 md:pt-20">
 				<div class="mx-auto px-6 py-12 md:w-[80vw]">
