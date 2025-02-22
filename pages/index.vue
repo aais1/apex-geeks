@@ -629,31 +629,19 @@ onMounted(() => {
 							class="flex cursor-pointer items-center text-lg text-Primary transition-all hover:text-Secondary"
 						>
 							<span class="arrow text-2xl text-blue-500">&#8594;</span>
-							<a href="#">About Us</a>
+							<a href="/about">About Us</a>
 						</li>
 						<li
 							class="flex cursor-pointer items-center text-lg text-Primary transition-all hover:text-Secondary"
 						>
 							<span class="arrow text-2xl text-blue-500">&#8594;</span>
-							<a href="#">Our Work</a>
+							<a href="/#recent-work">Our Work</a>
 						</li>
 						<li
 							class="flex cursor-pointer items-center text-lg text-Primary transition-all hover:text-Secondary"
 						>
 							<span class="arrow text-2xl text-blue-500">&#8594;</span>
-							<a href="#">Careers</a>
-						</li>
-						<li
-							class="flex cursor-pointer items-center text-lg text-Primary transition-all hover:text-Secondary"
-						>
-							<span class="arrow text-2xl text-blue-500">&#8594;</span>
-							<a href="#">Blog</a>
-						</li>
-						<li
-							class="flex cursor-pointer items-center text-lg text-Primary transition-all hover:text-Secondary"
-						>
-							<span class="arrow text-2xl text-blue-500">&#8594;</span>
-							<a href="#">Contact</a>
+							<a href="/contact">Contact</a>
 						</li>
 					</ul>
 				</div>
