@@ -96,40 +96,6 @@
 			</div>
 		</section>
 
-		<!-- team-members -->
-		<section
-			class="min-h-screen py-4 md:py-10"
-			v-motion-fade-visible-once
-		>
-			<div
-				class="mx-auto flex w-[80vw] flex-col items-center justify-center text-center"
-			>
-				<h3 class="text-[1.2rem] text-Secondary">Team Members</h3>
-				<h2
-					class="mb-4 w-[500px] text-[2.6rem] font-bold leading-[3.9rem] text-[#0E1435] md:mb-10 md:mt-6 md:text-[3rem]"
-				>
-					Our Creative Crew, Here for You
-				</h2>
-				<div class="grid grid-cols-1 gap-8 md:grid-cols-3">
-					<div
-						v-for="(member, index) in teamMembers"
-						:key="index"
-						class="flex flex-col items-center rounded-2xl bg-white p-6 shadow-md transition hover:shadow-xl"
-					>
-						<img
-							:src="member.photo"
-							alt="team-member"
-							class="mb-4 h-32 w-32 rounded-full object-cover"
-						/>
-						<h3 class="text-xl font-semibold text-Primary">
-							{{ member.name }}
-						</h3>
-						<p class="text-lg text-Secondary">{{ member.position }}</p>
-					</div>
-				</div>
-			</div>
-		</section>
-
 		<section
 			class="bg-BgPrimary py-16"
 			v-motion-fade-visible-once
@@ -159,44 +125,6 @@
 						alt=""
 					/>
 				</div>
-			</div>
-		</section>
-
-		<section
-			class="mx-auto flex min-h-screen w-[90vw] flex-col items-center bg-BgPrimary py-16 text-center md:w-[80vw] md:flex-row"
-			v-motion-fade-visible-once
-		>
-			<div class="mt-10 w-full md:-ml-[12vw]">
-				<img
-					src="https://azurodigital.com/wp-content/uploads/about-featured-3-1536x1050.jpg"
-					alt="Modern Workstation"
-					class="mx-auto w-full max-w-5xl rounded-3xl shadow-lg md:rounded-bl-3xl md:rounded-tl-3xl"
-				/>
-			</div>
-
-			<div
-				class="max-w-xl space-y-4 text-left md:max-w-2xl md:space-y-10 md:px-10"
-			>
-				<h2
-					class="mt-4 w-[75%] text-[2rem] font-bold leading-[3.7rem] tracking-[-0.06rem] text-Primary md:mt-0 md:w-full md:text-[3.95rem]"
-				>
-					Job Hunting?
-				</h2>
-				<p class="mb-6 text-[1rem] text-[#474B64]">
-					Looking to join a best-in-class web design agency? We’re firmly
-					committed to fostering our team’s growth and supportive culture.
-				</p>
-				<a
-					href="#"
-					class="mb-4 inline-block rounded-3xl bg-[#0E75E3] px-6 py-3 text-white shadow-lg"
-				>
-					Explore Careers
-				</a>
-				<!-- <div class="flex items-center justify-center space-x-2 text-Primary">
-				<span class="font-semibold">RATED 4.9/5</span>
-				<span class="text-red-500">★★★★★</span>
-				<span class="text-Secondary">79 REVIEWS</span>
-			</div> -->
 			</div>
 		</section>
 
@@ -366,21 +294,21 @@
 <script setup>
 const stats = [
 	{
-		icon: '/path-to-icon/computer-icon.png', // Replace with the actual image path
+		icon: 'https://cdn-icons-png.flaticon.com/512/1828/1828490.png', // Blue monitor icon
 		number: 129,
 		type: 'Websites Launched',
 		description:
-			'This ain’t our first rodeo. We’re always testing, learning, adapting and growing'
+			'This ain’t our first rodeo. We’re always testing, learning, adapting and growing.'
 	},
 	{
-		icon: '/path-to-icon/design-award-icon.png', // Replace with the actual image path
+		icon: 'https://cdn-icons-png.flaticon.com/512/1828/1828640.png', // Blue trophy icon
 		number: 16,
 		type: 'Design Awards Won',
 		description:
 			'Recognized by DesignRush, The Web Excellence Awards and many more.'
 	},
 	{
-		icon: '/path-to-icon/timezone-icon.png', // Replace with the actual image path
+		icon: '/calendar.png', // Blue globe with timezones
 		number: 14,
 		type: 'Client Timezones',
 		description:
