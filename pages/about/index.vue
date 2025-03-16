@@ -229,7 +229,7 @@
 								class="flex cursor-pointer items-center text-lg text-Primary transition-all hover:text-Secondary"
 							>
 								<span class="arrow text-2xl text-blue-500">&#8594;</span>
-								<a href="#">WordPress Development</a>
+								<a href="/wordpress-development">WordPress Development</a>
 							</li>
 							<li
 								class="flex cursor-pointer items-center text-lg text-Primary transition-all hover:text-Secondary"

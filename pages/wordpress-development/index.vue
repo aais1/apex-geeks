@@ -11,7 +11,7 @@
 				<h3
 					class="text-[1.00rem] font-medium leading-[1.7rem] tracking-[0.02rem] text-[#0E75E3]"
 				>
-					Custom Web Design Services
+					Professional WordPress Developers
 				</h3>
 				<h2
 					class="w-[85%] text-[2rem] font-bold leading-[3.7rem] tracking-[-0.06rem] text-Primary md:w-full md:text-[3rem]"
@@ -36,7 +36,7 @@
 			</div>
 			<div class="mt-10 w-full md:-mr-[12vw]">
 				<img
-					src="https://azurodigital.com/wp-content/uploads/about-featured-3-1536x1050.jpg"
+					src="https://azurodigital.com/wp-content/uploads/wordpress-development-featured-v2-1536x1050.jpg"
 					alt="Modern Workstation"
 					class="mx-auto w-full max-w-5xl rounded-3xl shadow-lg md:rounded-bl-3xl md:rounded-tl-3xl"
 				/>
@@ -64,13 +64,13 @@
 							<h1
 								class="my-5 cursor-pointer text-2xl font-semibold text-Primary transition hover:text-Secondary"
 							>
-								Industry Research
+								Fast Loading Speed
 							</h1>
 						</NuxtLink>
 						<p class="text-lg text-Neutral">
-							We analyze your target market and competitors to ensure that your
-							website stands out from the crowd with the perfect design, user
-							experience and content.
+							Your site speed is not only important for the user experience and
+							the conversion rate, but it’s also an SEO ranking factor. We’ll
+							make your website fly.
 						</p>
 					</div>
 
@@ -87,40 +87,17 @@
 							<h1
 								class="my-5 cursor-pointer text-2xl font-semibold text-Primary transition hover:text-Secondary"
 							>
-								Multiple Design Concepts
+								Robust Security
 							</h1>
 						</NuxtLink>
 						<p class="text-lg text-Neutral">
-							We develop websites at the highest standard of security,
-							responsiveness, accessibility, reliability, loading speed and
-							ease-of-use.
+							WordPress can be vulnerable to hackers if you don’t configure the
+							application correctly. We add multiple layers of security to keep
+							your website safe.
 						</p>
 					</div>
 
 					<!-- Search Engine Optimization -->
-					<div
-						class="group flex flex-col bg-white px-10 py-10 transition hover:bg-BgPrimary"
-					>
-						<div
-							class="grid size-16 place-content-center rounded-full bg-BgPrimary transition group-hover:bg-white"
-						>
-							<LogosComputerPaint class="size-8 text-Secondary" />
-						</div>
-						<NuxtLink>
-							<h1
-								class="my-5 cursor-pointer text-2xl font-semibold text-Primary transition hover:text-Secondary"
-							>
-								Unlimited Revisions
-							</h1>
-						</NuxtLink>
-						<p class="text-lg text-Neutral">
-							Web design is a highly collaborative process. Our team is flexible
-							and we act as a true partner. We provide unlimited revisions with
-							no unexpected fees.
-						</p>
-					</div>
-
-					<!-- Web Hosting & Maintenance (Replaced Logo Design & Branding) -->
 					<div
 						class="group flex flex-col bg-white px-10 py-10 transition hover:bg-BgPrimary"
 					>
@@ -143,7 +120,7 @@
 						</p>
 					</div>
 
-					<!-- Content Writing Assistance -->
+					<!-- Web Hosting & Maintenance (Replaced Logo Design & Branding) -->
 					<div
 						class="group flex flex-col bg-white px-10 py-10 transition hover:bg-BgPrimary"
 					>
@@ -166,6 +143,29 @@
 						</p>
 					</div>
 
+					<!-- Content Writing Assistance -->
+					<div
+						class="group flex flex-col bg-white px-10 py-10 transition hover:bg-BgPrimary"
+					>
+						<div
+							class="grid size-16 place-content-center rounded-full bg-BgPrimary transition group-hover:bg-white"
+						>
+							<LogosComputerPaint class="size-8 text-Secondary" />
+						</div>
+						<NuxtLink>
+							<h1
+								class="my-5 cursor-pointer text-2xl font-semibold text-Primary transition hover:text-Secondary"
+							>
+								Easy to Edit Yourself
+							</h1>
+						</NuxtLink>
+						<p class="text-lg text-Neutral">
+							We know you don’t want to rely on us for every minor edit. That’s
+							why we provide training and build your site in a way that’s easy
+							for you to make small changes.
+						</p>
+					</div>
+
 					<!-- Mobile Application Development (Last Item) -->
 					<div
 						class="group flex flex-col bg-white px-10 py-10 transition hover:bg-BgPrimary"
@@ -179,20 +179,19 @@
 							<h1
 								class="my-5 cursor-pointer text-2xl font-semibold text-Primary transition hover:text-Secondary"
 							>
-								Transparent Communication
+								Own Your Website
 							</h1>
 						</NuxtLink>
 						<p class="text-lg text-Neutral">
-							We make helpful recommendations and we don’t hold back our
-							opinions. We’re a strategic partner and we immerse ourselves in
-							every aspect of your website.
+							Some agencies technically own their clients’ websites. Not us. You
+							have full administrative access to your website and own the entire
+							thing outright.
 						</p>
 					</div>
 				</div>
 			</div>
 		</section>
 
-		s
 		<section class="bg-BgPrimary px-4 py-20">
 			<div class="mx-auto w-[80vw]">
 				<h3 class="text-center text-[1.2rem] font-semibold text-blue-600">
@@ -471,26 +470,25 @@ const toggleFaq = (index) => {
 // FAQ data
 const faqs = ref([
 	{
-		question: 'What are the next steps to get things started?',
-		answer:
-			'Shortly after you submit the form, we will schedule a discovery call to discuss your project in detail. After that, we will provide a comprehensive proposal tailored to your needs.'
+		question: 'Why is WordPress the best web development platform?',
+		answer: `WordPress is by far the most popular web development platform for a number of reasons. To put its popularity into perspective, according to HubSpot and many other sources, WordPress powers roughly 43% of all websites on the internet. Meanwhile, Shopify is the 2nd most popular platform and only powers about 6% of websites.
+The reason why WordPress is so popular is due to its flexibility. You can integrate any type of functionality with efficiency and effectiveness. Other platforms are often more restrictive and don’t allow you to have full control.
+
+WordPress is “open source” which means that you can customize anything, and it also means that you have complete ownership of the website. There are other open source platforms out there, but most professionals believe that WordPress provides the most seamless design and development experience on the market.`
 	},
 	{
-		question: 'What will your proposal include exactly?',
-		answer:
-			'Our proposal includes project scope, deliverables, timeline, and cost breakdown with all necessary details.'
+		question: 'As WordPress developers, what tools and plugins do you use?',
+		answer: `We use a variety of tools and plugins to ensure that your website is fast, secure, and user-friendly. Some of the tools we use include:`
 	},
 	{
-		question:
-			'How long will it take to receive a proposal? And when can you start?',
+		question: 'Why do I need a WordPress maintenance plan?',
 		answer:
-			'We typically send proposals within 2-3 business days. Once approved, we can start immediately based on availability.'
+			'As a result of the flexibility and vast customization capabilities that WordPress provides, it also requires ongoing technical maintenance to prevent it from breaking down or getting hacked. For more information, we’ve written a comprehensive article on why you need a WordPress maintenance plan.'
 	},
 	{
-		question:
-			'Can we speak to your clients over the phone to learn about their experience?',
+		question: 'How do you optimize website speed on WordPress?',
 		answer:
-			'Yes, we can arrange calls with past clients upon request, ensuring confidentiality and proper scheduling.'
+			'Website speed is crucial for user experience and SEO. We optimize website speed by compressing images, minifying CSS and JavaScript, leveraging browser caching, and more. For more information, we’ve written a comprehensive article on how to optimize website speed on WordPress.'
 	}
 ]);
 </script>

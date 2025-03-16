@@ -561,9 +561,9 @@ onMounted(() => {
 
 			<!-- Service Categories -->
 			<div
-				class="gap-08 mt-4 flex flex-wrap justify-start gap-8 gap-x-16 px-2 text-left md:mt-12"
+				class="mt-4 flex flex-wrap justify-between gap-8 px-2 text-left md:mt-12"
 			>
-				<div class="space-y-2">
+				<div class="min-w-[200px] flex-1 space-y-2">
 					<h3
 						class="text-center text-xl font-semibold text-Primary md:text-left md:text-2xl"
 					>
@@ -576,8 +576,53 @@ onMounted(() => {
 						Serving Clients Across the Globe
 					</p>
 				</div>
-
-				<div class="text-gray-700">
+				<div class="min-w-[200px] flex-1 text-gray-700">
+					<h4 class="font-semibold text-Secondary">Creative</h4>
+					<ul class="mt-2 space-y-2">
+						<li
+							class="flex cursor-pointer items-center text-lg text-Primary transition-all hover:text-Secondary"
+						>
+							<span class="arrow text-2xl text-blue-500">&#8594;</span>
+							<a href="/custom-web-design">Custom Website Design</a>
+						</li>
+						<li
+							class="flex cursor-pointer items-center text-lg text-Primary transition-all hover:text-Secondary"
+						>
+							<span class="arrow text-2xl text-blue-500">&#8594;</span>
+							<a href="#">Logo Design & Branding</a>
+						</li>
+						<li
+							class="flex cursor-pointer items-center text-lg text-Primary transition-all hover:text-Secondary"
+						>
+							<span class="arrow text-2xl text-blue-500">&#8594;</span>
+							<a href="#">Content Writing Assistance</a>
+						</li>
+					</ul>
+				</div>
+				<div class="min-w-[200px] flex-1 text-gray-700">
+					<h4 class="font-semibold text-Secondary">Technical</h4>
+					<ul class="mt-2 space-y-2">
+						<li
+							class="flex cursor-pointer items-center text-lg text-Primary transition-all hover:text-Secondary"
+						>
+							<span class="arrow text-2xl text-blue-500">&#8594;</span>
+							<a href="/wordpress-development">WordPress Development</a>
+						</li>
+						<li
+							class="flex cursor-pointer items-center text-lg text-Primary transition-all hover:text-Secondary"
+						>
+							<span class="arrow text-2xl text-blue-500">&#8594;</span>
+							<a href="#">Search Engine Optimization</a>
+						</li>
+						<li
+							class="flex cursor-pointer items-center text-lg text-Primary transition-all hover:text-Secondary"
+						>
+							<span class="arrow text-2xl text-blue-500">&#8594;</span>
+							<a href="#">Web Hosting & Maintenance</a>
+						</li>
+					</ul>
+				</div>
+				<div class="min-w-[200px] flex-1 text-gray-700">
 					<h4 class="font-semibold text-Secondary">Company</h4>
 					<ul class="mt-2 space-y-2">
 						<li
